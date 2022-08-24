@@ -1,0 +1,23 @@
+[
+    {
+        "numHabitacion":"1",
+        "valor":"200US",
+        "descripcion":"Tv por Cable"
+    },
+    {
+        "numHabitacion":"2",
+        "valor":"250USD",
+        "descripcion":"Jacuzi"
+    },
+    {
+        "numHabitacion":"3",
+        "valor":"300USD",
+        "descripcion":"Balcon vistas al mar"
+    },
+    {
+        "numHabitacion":"4",
+        "valor":"225USD",
+        "descripcion":"2 duchas"
+    }
+    
+]
