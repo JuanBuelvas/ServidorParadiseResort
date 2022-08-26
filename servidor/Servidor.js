@@ -10,6 +10,7 @@ export class Servidor{
     constructor(){
         this.app = express()
         this.habilitarBody()
+        this.conectarBD()
         this.atenderPeticiones() //Atender peticiones
     }
 
