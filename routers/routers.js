@@ -15,7 +15,7 @@ routers.get('/viajesComfama/v1/habitaciones',habitacionController.buscarHabitaci
 routers.get('/viajesComfama/v1/habitacion/:id',habitacionController.buscarHabitacionPorId);
 routers.post('/viajesComfama/v1/habitacion',habitacionController.agregarHabitacion);
 routers.put('/viajesComfama/v1/habitacion/:id',habitacionController.editarHabitacion);
-routers.delete('/viajesComfama/v1/cancelar/id',);
+//routers.delete('/viajesComfama/v1/cancelar/id',);
 
 //ENDPOINTS PARA LOS SERVICIOS ASOICIADOS A LAS RESERVAS
 routers.get('/viajesComfama/v1/habitaciones',);

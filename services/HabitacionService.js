@@ -22,8 +22,4 @@ export class HabitacionService{
     async actualizar(id, datos){
         return habitacionModel.findByIdAndUpdate(id, datos);
     }
-
-    
-
-
 }

@@ -32,5 +32,5 @@ const Reserva = new Schema({
     },
 })
 
-const resevaModel=mongoose.model('reserva', Reserva);
+export const resevaModel=mongoose.model('reserva', Reserva);
 
