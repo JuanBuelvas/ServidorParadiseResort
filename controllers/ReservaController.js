@@ -1,6 +1,7 @@
 import {ReservaService} from '../services/ReservaService.js'
 
 export class ReservaController{
+
     constructor(){};
 
     //Buscar Reservas
@@ -14,6 +15,7 @@ export class ReservaController{
                 mensaje:"Exito en la consulta",
                 datos:reservaService.buscarTodas()
             })
+            response.json(datos);
         }catch(error){ //Fallo Resolviendo la Peticion
             response(404).json({
                 mensaje:"Upp, algo fallo " + error,
@@ -34,6 +36,7 @@ export class ReservaController{
                 mensaje:"Exito en la consulta",
                 datos:reservaService.buscarPorId(id)
             })
+            response.json(datos);
         }catch(error){ //Fallo Resolviendo la Peticion
             response(404).json({
                 mensaje:"Upp, algo fallo " + error,
@@ -65,10 +68,17 @@ export class ReservaController{
 
     //Editar Reserva
     editarReserva(request, response){
+        //Instanciar ReservaService
+        let reservaService = new ReservaService();
+
+        let id = request.params.id;
+        let datos = request.body;
+
         try{
+            reservaService.actualizar(id, datos);
             response.status(200).json({
-                mensaje:"Exito en la consulta",
-                datos:reservaService.buscarTodas()
+                mensaje:"Exito editando la habitacion " + id,
+                datos:null
             })
         }catch(error){ //Fallo Resolviendo la Peticion
             response(404).json({
@@ -80,10 +90,16 @@ export class ReservaController{
 
     //Eliminar Reserva
     eliminarReserva(request, response){
+        //Instanciar ReservaService
+        let reservaService = new ReservaService();
+
+        let id = request.params.id;
+        
         try{
+            reservaService.eliminar(id);
             response.status(200).json({
-                mensaje:"Exito en la consulta",
-                datos:reservaService.buscarTodas()
+                mensaje:"Exito eliminando la reserva",
+                datos:null
             })
         }catch(error){ //Fallo Resolviendo la Peticion
             response(404).json({

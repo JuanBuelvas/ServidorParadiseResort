@@ -14,11 +14,15 @@ export class ReservaService{
     }
 
     async agregar(datos){
-        let newReserva = new resevaModel.save(datos);
+        let newReserva = new resevaModel(datos);
         return await newReserva.save();
     }
 
     async actualizar(id, datos){
-        return resevaModel.findByIdAndUpdate(id, datos);
+        return await resevaModel.findByIdAndUpdate(id, datos);
+    }
+
+    async eliminar(id){
+        return await resevaModel.deleteById(id);
     }
 }

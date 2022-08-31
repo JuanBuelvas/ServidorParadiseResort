@@ -6,7 +6,7 @@ export class HabitacionController{
     constructor(){};
     
     //Buscar Habitaciones
-    buscarHabitaciones(request, response){
+    async buscarHabitaciones(request, response){
         //Instanciar HabitacionService
         let habitacionService = new HabitacionService();
 
@@ -15,7 +15,7 @@ export class HabitacionController{
         try{
             response.status(200).json({
                 mensaje:"Exito en la consulta",
-                datos:habitacionService.buscarTodas()
+                datos: await habitacionService.buscarTodas()
             })
             response.json(datos);
         }catch(error){ //Fallo Resolviendo la Peticion
@@ -27,7 +27,7 @@ export class HabitacionController{
     }
 
     //Buscar Habitacion por ID
-    buscarHabitacionPorId(request, response){
+    async buscarHabitacionPorId(request, response){
         //Instanciar HabitacionService
         let habitacionService = new HabitacionService();
         
@@ -36,7 +36,7 @@ export class HabitacionController{
         try{
             response.status(200).json({
                 mensaje:"Exito en la consulta " + id,
-                datos:habitacionService.buscarPorId(id)
+                datos: await habitacionService.buscarPorId(id)
             })
             response.json(datos);
         }catch(error){ //Fallo Resolviendo la Peticion
@@ -48,14 +48,14 @@ export class HabitacionController{
     }
 
     //Agregar Habitacion
-    agregarHabitacion(request, response){
+    async agregarHabitacion(request, response){
         //Instanciar HabitacionService
         let habitacionService = new HabitacionService();
 
         let body = request.body;
 
         try{
-            habitacionService.agregar(body);
+            await habitacionService.agregar(body);
             response.status(200).json({
                 mensaje:"Exito Agregando la Habitacion " + body.nombre,
                 datos:null
@@ -69,7 +69,7 @@ export class HabitacionController{
     }
 
     //Editar Habitacion
-    editarHabitacion(request, response){
+    async editarHabitacion(request, response){
         //Instanciar HabitacionService
         let habitacionService = new HabitacionService();
 
@@ -77,7 +77,7 @@ export class HabitacionController{
         let datos = request.body;
 
         try{
-            habitacionService.actualizar(id, datos);
+            await habitacionService.actualizar(id, datos);
             response.status(200).json({
                 mensaje:"Exito editando la habitacion " + id,
                 datos:null
@@ -91,7 +91,7 @@ export class HabitacionController{
     }
 
     //Eliminar Habitacion
-    eliminarHabitacion(request, response){
+    async eliminarHabitacion(request, response){
         try{
             response.status(200).json({
                 mensaje:"Exito en la consulta " + id,

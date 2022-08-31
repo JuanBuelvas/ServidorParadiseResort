@@ -20,6 +20,6 @@ export class HabitacionService{
     }
 
     async actualizar(id, datos){
-        return habitacionModel.findByIdAndUpdate(id, datos);
+        return await habitacionModel.findByIdAndUpdate(id, datos);
     }
 }
