@@ -36,7 +36,7 @@ export class HabitacionController{
         try{
             response.status(200).json({
                 mensaje:"Exito en la consulta " + id,
-                datos: await habitacionService.buscarPorId(id)
+                //datos: await habitacionService.buscarPorId(id)
             })
             response.json(datos);
         }catch(error){ //Fallo Resolviendo la Peticion
