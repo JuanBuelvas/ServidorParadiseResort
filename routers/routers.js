@@ -20,12 +20,12 @@ routers.get('/viajesComfama/v1/habitaciones',habitacionController.buscarHabitaci
 routers.get('/viajesComfama/v1/habitacion/:id',habitacionController.buscarHabitacionPorId);
 routers.post('/viajesComfama/v1/habitacion',habitacionController.agregarHabitacion);
 routers.put('/viajesComfama/v1/habitacion/:id',habitacionController.editarHabitacion);
-//routers.delete('/viajesComfama/v1/cancelar/id',);
+
 
 //ENDPOINTS PARA LOS SERVICIOS ASOICIADOS A LAS RESERVAS
-routers.get('/viajesComfama/v1/reservas',reservaController.buscarReservas);
+/*routers.get('/viajesComfama/v1/reservas',reservaController.buscarReservas);
 routers.get('/viajesComfama/v1/reserva/:id',reservaController.buscarReservaPorId);
 routers.post('/viajesComfama/v1/reserva',reservaController.agregarReserva);
 routers.put('/viajesComfama/v1/reserva/:id',reservaController.editarReserva);
-routers.delete('/viajesComfama/v1/reserva/:id',reservaController.eliminarReserva);
+routers.delete('/viajesComfama/v1/reserva/:id',reservaController.eliminarReserva);*/
 
