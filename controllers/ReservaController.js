@@ -5,7 +5,7 @@ export class ReservaController{
     constructor(){};
 
     //Buscar Reservas
-    buscarReservas(request, response){
+    async buscarReservas(request, response){
         //Instanciar ReservaService
         let reservaService = new ReservaService();
 
@@ -13,7 +13,7 @@ export class ReservaController{
         try{
             response.status(200).json({
                 mensaje:"Exito en la consulta",
-                datos:reservaService.buscarTodas()
+                datos: await reservaService.buscarTodas()
             })
             response.json(datos);
         }catch(error){ //Fallo Resolviendo la Peticion
@@ -25,7 +25,7 @@ export class ReservaController{
     }
 
     //Buscar Reserva por ID
-    buscarReservaPorId(request, response){
+    async buscarReservaPorId(request, response){
         //Instanciar ReservaService
         let reservaService = new ReservaService();
 
@@ -34,7 +34,7 @@ export class ReservaController{
         try{
             response.status(200).json({
                 mensaje:"Exito en la consulta",
-                datos:reservaService.buscarPorId(id)
+                datos: await reservaService.buscarPorId(id)
             })
             response.json(datos);
         }catch(error){ //Fallo Resolviendo la Peticion
@@ -46,16 +46,16 @@ export class ReservaController{
     }
 
     //Agregar Reserva
-    agregarReserva(request, response){
+    async agregarReserva(request, response){
         //Instanciar ReservaService
         let reservaService = new ReservaService();
 
         let body = request.body;
 
         try{
-            reservaService.agregar(body);
+            await reservaService.agregar(body);
             response.status(200).json({
-                mensaje:"Exito Agregando la Habitacion " + body.nombre,
+                mensaje:"Exito Agregando la Reserva ",
                 datos:null
             })
         }catch(error){ //Fallo Resolviendo la Peticion
@@ -67,7 +67,7 @@ export class ReservaController{
     }
 
     //Editar Reserva
-    editarReserva(request, response){
+    async editarReserva(request, response){
         //Instanciar ReservaService
         let reservaService = new ReservaService();
 
@@ -75,7 +75,7 @@ export class ReservaController{
         let datos = request.body;
 
         try{
-            reservaService.actualizar(id, datos);
+            await reservaService.actualizar(id, datos);
             response.status(200).json({
                 mensaje:"Exito editando la habitacion " + id,
                 datos:null
@@ -89,14 +89,14 @@ export class ReservaController{
     }
 
     //Eliminar Reserva
-    eliminarReserva(request, response){
+    async eliminarReserva(request, response){
         //Instanciar ReservaService
         let reservaService = new ReservaService();
 
         let id = request.params.id;
         
         try{
-            reservaService.eliminar(id);
+            await reservaService.eliminar(id);
             response.status(200).json({
                 mensaje:"Exito eliminando la reserva",
                 datos:null
