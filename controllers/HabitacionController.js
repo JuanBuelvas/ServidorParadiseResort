@@ -31,12 +31,12 @@ export class HabitacionController{
         //Instanciar HabitacionService
         let habitacionService = new HabitacionService();
         
-        let id = request.params.id;
+        let ide = request.params.id;
 
         try{
             response.status(200).json({
-                mensaje:"Exito en la consulta " + id,
-                datos: await habitacionService.buscarPorId(id)
+                mensaje:"Exito en la consulta " + ide,
+                datos: await habitacionService.buscarPorId(ide)
             })
             response.json(datos);
         }catch(error){ //Fallo Resolviendo la Peticion
