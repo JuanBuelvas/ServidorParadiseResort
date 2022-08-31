@@ -23,9 +23,9 @@ routers.put('/viajesComfama/v1/habitacion/:id',habitacionController.editarHabita
 
 
 //ENDPOINTS PARA LOS SERVICIOS ASOICIADOS A LAS RESERVAS
-/*routers.get('/viajesComfama/v1/reservas',reservaController.buscarReservas);
+routers.get('/viajesComfama/v1/reservas',reservaController.buscarReservas);
 routers.get('/viajesComfama/v1/reserva/:id',reservaController.buscarReservaPorId);
 routers.post('/viajesComfama/v1/reserva',reservaController.agregarReserva);
-routers.put('/viajesComfama/v1/reserva/:id',reservaController.editarReserva);
-routers.delete('/viajesComfama/v1/reserva/:id',reservaController.eliminarReserva);*/
+//routers.put('/viajesComfama/v1/reserva/:id',reservaController.editarReserva);
+//routers.delete('/viajesComfama/v1/reserva/:id',reservaController.eliminarReserva);
 
