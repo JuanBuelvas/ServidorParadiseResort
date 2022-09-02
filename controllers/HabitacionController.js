@@ -6,25 +6,25 @@ export class HabitacionController{
     constructor(){};
     
     //Buscar Habitaciones
-    // async buscarHabitaciones(request, response){
-    //     //Instanciar HabitacionService
-    //     let habitacionService = new HabitacionService();
+    async buscarHabitaciones(request, response){
+        //Instanciar HabitacionService
+        let habitacionService = new HabitacionService();
 
-    //     //Intento Resolver la Peticion
-    //     //let datos = new datos;
-    //     try{
-    //         response.status(200).json({
-    //             mensaje:"Exito en la consulta",
-    //             datos: await habitacionService.buscarTodas()
-    //         })
-    //         response.json(datos);
-    //     }catch(error){ //Fallo Resolviendo la Peticion
-    //         response(404).json({
-    //             mensaje:"Upp, algo fallo " + error,
-    //             datos:null
-    //         })
-    //     }
-    // }
+        //Intento Resolver la Peticion
+        let datos = new datos;
+        try{
+            response.status(200).json({
+                mensaje:"Exito en la consulta",
+                datos: await habitacionService.buscarTodas()
+            })
+            response.json(datos);
+        }catch(error){ //Fallo Resolviendo la Peticion
+            response(404).json({
+                mensaje:"Upp, algo fallo " + error,
+                datos:null
+            })
+        }
+    }
 
     //Buscar Habitacion por ID
     // async buscarHabitacionPorId(request, response){

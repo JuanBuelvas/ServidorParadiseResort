@@ -16,7 +16,7 @@ export let routers = express.Router()
 
 //Escribo mis rutas (cada ruta es un servicio)
 //ENDPOINTS PARA LOS SERVICIOS ASOICIADOS A LAS HABITACIONES
-//routers.get('/viajesComfama/v1/habitaciones',habitacionController.buscarHabitaciones);
+routers.get('/viajesComfama/v1/habitaciones',habitacionController.buscarHabitaciones);
 //routers.get('/viajesComfama/v1/habitacion/:id',habitacionController.buscarHabitacionPorId);
 routers.post('/viajesComfama/v1/habitacion',habitacionController.agregarHabitacion);
 //routers.put('/viajesComfama/v1/habitacion/:id',habitacionController.editarHabitacion);
