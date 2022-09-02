@@ -6,46 +6,46 @@ export class HabitacionController{
     constructor(){};
     
     //Buscar Habitaciones
-    // async buscarHabitaciones(request, response){
-    //     //Instanciar HabitacionService
-    //     let habitacionService = new HabitacionService();
+    async buscarHabitaciones(request, response){
+        //Instanciar HabitacionService
+        let habitacionService = new HabitacionService();
 
-    //     //Intento Resolver la Peticion
-    //     let datos = new datos;
-    //     try{
-    //         response.status(200).json({
-    //             mensaje:"Exito en la consulta",
-    //             datos: await habitacionService.buscarTodas()
-    //         })
-    //         response.json(datos);
-    //     }catch(error){ //Fallo Resolviendo la Peticion
-    //         response(404).json({
-    //             mensaje:"Upp, algo fallo " + error,
-    //             datos:null
-    //         })
-    //     }
-    // }
+        //Intento Resolver la Peticion
+       
+        try{
+            response.status(200).json({
+                mensaje:"Exito en la consulta",
+                datos: await habitacionService.buscarTodas()
+            })
+           
+        }catch(error){ //Fallo Resolviendo la Peticion
+            response(404).json({
+                mensaje:"Upp, algo fallo " + error,
+                datos:null
+            })
+        }
+    }
 
     //Buscar Habitacion por ID
-    // async buscarHabitacionPorId(request, response){
-    //     //Instanciar HabitacionService
-    //     let habitacionService = new HabitacionService();
+    async buscarHabitacionPorId(request, response){
+        //Instanciar HabitacionService
+        let habitacionService = new HabitacionService();
         
-    //     let ide = request.params.id;
+        let ide = request.params.id;
 
-    //     try{
-    //         response.status(200).json({
-    //             mensaje:"Exito en la consulta " + ide,
-    //             datos: await habitacionService.buscarPorId(ide)
-    //         })
-    //         response.json(datos);
-    //     }catch(error){ //Fallo Resolviendo la Peticion
-    //         response(404).json({
-    //             mensaje:"Upp, algo fallo " + error,
-    //             datos:null
-    //         })
-    //     }
-    // }
+        try{
+            response.status(200).json({
+                mensaje:"Exito en la consulta " + ide,
+                datos: await habitacionService.buscarPorId(ide)
+            })
+
+        }catch(error){ //Fallo Resolviendo la Peticion
+            response.status(404).json({
+                mensaje:"Upp, algo fallo " + error,
+                datos:null
+            })
+        }
+    }
 
     //Agregar Habitacion
     async agregarHabitacion(request, response){
@@ -61,7 +61,7 @@ export class HabitacionController{
                 datos:null
             })
         }catch(error){ //Fallo Resolviendo la Peticion
-            response(404).json({
+            response.status(404).json({
                 mensaje:"Upp, algo fallo " + error,
                 datos:null
             })
@@ -69,26 +69,26 @@ export class HabitacionController{
     }
 
     //Editar Habitacion
-    // async editarHabitacion(request, response){
-    //     //Instanciar HabitacionService
-    //     let habitacionService = new HabitacionService();
+    async editarHabitacion(request, response){
+        //Instanciar HabitacionService
+        let habitacionService = new HabitacionService();
 
-    //     let id = request.params.id;
-    //     let datos = request.body;
+        let id = request.params.id;
+        let datos = request.body;
 
-    //     try{
-    //         await habitacionService.actualizar(id, datos);
-    //         response.status(200).json({
-    //             mensaje:"Exito editando la habitacion " + id,
-    //             datos:null
-    //         })
-    //     }catch(error){ //Fallo Resolviendo la Peticion
-    //         response(404).json({
-    //             mensaje:"Upp, algo fallo " + error,
-    //             datos:null
-    //         })
-    //     }
-    // }
+        try{
+            await habitacionService.actualizar(id, datos);
+            response.status(200).json({
+                mensaje:"Exito editando la habitacion " + id,
+                datos:null
+            })
+        }catch(error){ //Fallo Resolviendo la Peticion
+            response.status(404).json({
+                mensaje:"Upp, algo fallo " + error,
+                datos:null
+            })
+        }
+    }
 
     //Eliminar Habitacion
     // async eliminarHabitacion(request, response){

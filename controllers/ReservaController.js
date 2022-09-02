@@ -15,9 +15,8 @@ export class ReservaController{
                 mensaje:"Exito en la consulta",
                 datos: await reservaService.buscarTodas()
             })
-            response.json(datos);
         }catch(error){ //Fallo Resolviendo la Peticion
-            response(404).json({
+            response.status(404).json({
                 mensaje:"Upp, algo fallo " + error,
                 datos:null
             })
@@ -36,9 +35,8 @@ export class ReservaController{
                 mensaje:"Exito en la consulta",
                 datos: await reservaService.buscarPorId(id)
             })
-            response.json(datos);
         }catch(error){ //Fallo Resolviendo la Peticion
-            response(404).json({
+            response.status(404).json({
                 mensaje:"Upp, algo fallo " + error,
                 datos:null
             })
@@ -59,7 +57,7 @@ export class ReservaController{
                 datos:null
             })
         }catch(error){ //Fallo Resolviendo la Peticion
-            response(404).json({
+            response.status(404).json({
                 mensaje:"Upp, algo fallo " + error,
                 datos:null
             })
@@ -81,7 +79,7 @@ export class ReservaController{
                 datos:null
             })
         }catch(error){ //Fallo Resolviendo la Peticion
-            response(404).json({
+            response.status(404).json({
                 mensaje:"Upp, algo fallo " + error,
                 datos:null
             })
@@ -102,7 +100,7 @@ export class ReservaController{
                 datos:null
             })
         }catch(error){ //Fallo Resolviendo la Peticion
-            response(404).json({
+            response.status(404).json({
                 mensaje:"Upp, algo fallo " + error,
                 datos:null
             })
