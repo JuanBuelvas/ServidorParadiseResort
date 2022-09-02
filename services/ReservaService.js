@@ -23,6 +23,6 @@ export class ReservaService{
     }
 
     async eliminar(id){
-        return await resevaModel.deleteById(id);
+        return await resevaModel.findByIdAndDelete(id);
     }
 }
